@@ -1,57 +1,29 @@
-# fullstackopen
-Following fullstackopen course
+# Full Stack Open
 
-✔️ Part 0
-Fundamentals of Web apps 
+This repository contains exercises and projects from the Full Stack Open course.
 
-✔️ Part 1
-Introduction to React
+## Course Progression
 
-a Introduction to React
-b JavaScript
-c Component state, event handlers
-d A more complex state, debugging React apps
-
-
-Part 2
-Communicating with server
-
-a Rendering a collection, modules
-b Forms
-c Getting data from server
-d Altering data in server
-e Adding styles to React app
-
-
-Part 3
-Programming a server with NodeJS and Express
-
-Part 4
-Testing Express servers, user administration
-
-Part 5
-Testing React apps
-
-Part 6
-Advanced state management
-
-Part 7
-React router, custom hooks, styling app with CSS and webpack
-
-Part 8
-GraphQL
-
-Part 9
-TypeScript
-
-Part 10
-React Native
-
-Part 11
-CI/CD
-
-Part 12
-Containers
-
-Part 13
-Using relational databases
+| Part | Sub-part | Status |
+|------|----------|--------|
+| 0    | Fundamentals of Web Apps | ✅ Completed |
+| 1    | Introduction to React | ✅ Completed |
+| 1    | JavaScript | ✅ Completed |
+| 1    | Component state, event handlers | ✅ Completed |
+| 1    | A more complex state, debugging React apps | ✅ Completed |
+| 2    | Rendering a collection, modules | ⬜ Not started |
+| 2    | Forms | ⬜ Not started |
+| 2    | Getting data from server | ⬜ Not started |
+| 2    | Altering data on server | ⬜ Not started |
+| 2    | Adding styles to React app | ⬜ Not started |
+| 3    | Programming a Server with NodeJS and Express | ⬜ Not started |
+| 4    | Testing Express Servers, User Administration | ⬜ Not started |
+| 5    | Testing React Apps | ⬜ Not started |
+| 6    | Advanced State Management | ⬜ Not started |
+| 7    | React Router, Custom Hooks, Styling App with CSS and Webpack | ⬜ Not started |
+| 8    | GraphQL | ⬜ Not started |
+| 9    | TypeScript | ⬜ Not started |
+| 10   | React Native | ⬜ Not started |
+| 11   | CI/CD | ⬜ Not started |
+| 12   | Containers | ⬜ Not started |
+| 13   | Using Relational Databases | ⬜ Not started |
