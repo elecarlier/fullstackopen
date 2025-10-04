@@ -8,14 +8,14 @@ This repository contains exercises and projects from the Full Stack Open course.
 |------|----------|--------|
 | 0    | Fundamentals of Web Apps | ✅ Completed |
 | 1    | Introduction to React | ✅ Completed |
-| 1    | JavaScript | ✅ Completed |
-| 1    | Component state, event handlers | ✅ Completed |
-| 1    | A more complex state, debugging React apps | ✅ Completed |
-| 2    | Rendering a collection, modules | ⬜ Not started |
-| 2    | Forms | ⬜ Not started |
-| 2    | Getting data from server | ⬜ Not started |
-| 2    | Altering data on server | ⬜ Not started |
-| 2    | Adding styles to React app | ⬜ Not started |
+|      | JavaScript | ✅ Completed |
+|      | Component state, event handlers | ✅ Completed |
+|      | A more complex state, debugging React apps | ✅ Completed |
+| 2    | Rendering a collection, modules | ✅ Completed |
+|      | Forms | ✅ Completed |
+|      | Getting data from server | ⬜ in progress |
+|      | Altering data on server | ⬜ Not started |
+|      | Adding styles to React app | ⬜ Not started |
 | 3    | Programming a Server with NodeJS and Express | ⬜ Not started |
 | 4    | Testing Express Servers, User Administration | ⬜ Not started |
 | 5    | Testing React Apps | ⬜ Not started |
