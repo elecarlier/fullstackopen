@@ -4,11 +4,24 @@ Following fullstackopen course
 ✔️ Part 0
 Fundamentals of Web apps 
 
-Part 1
+✔️ Part 1
 Introduction to React
+
+a Introduction to React
+b JavaScript
+c Component state, event handlers
+d A more complex state, debugging React apps
+
 
 Part 2
 Communicating with server
+
+a Rendering a collection, modules
+b Forms
+c Getting data from server
+d Altering data in server
+e Adding styles to React app
+
 
 Part 3
 Programming a server with NodeJS and Express

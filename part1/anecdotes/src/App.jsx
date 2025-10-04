@@ -11,10 +11,6 @@ const Displ = (props) => {
   )
 }
 
-// const High = (props) => {
-
-// }
-
 const App = () => {
   const anecdotes = [
     'If it hurts, do it more often.',
