@@ -13,33 +13,36 @@ const History = (props) => {
   }  
   return (    
     <div>      
-      <Disp name='good' nb={props.good}/>
-      <Disp name='neutral' nb={props.neutral}/>
-      <Disp name='bad' nb={props.bad}/>
-      <Stat good={props.good} neutral={props.neutral} bad={props.bad} />
+    <Statistics good={props.good} neutral={props.neutral} bad={props.bad} />
     </div>  )
     }
 
-const Disp = (props) =>
+const StatisticLine = ({text, value}) =>
 {
   return (
-    <p>
-      {props.name} {props.nb}
-    </p>
+  <tr>
+    <td>{text}</td>
+    <td>{value}</td>
+  </tr>    
   )
 }
 
-const Stat = (props) => 
+const Statistics = ({good, neutral, bad}) => 
 {
-  const total = props.good + props.bad + props.neutral 
-  const positiv = (props.good / total) * 100
-  const average = (props.good - props.bad) / total
+  const total = good + bad + neutral 
+  const positiv = (good / total) * 100
+  const average =  (good + bad * -1) / total
   return (
-    <div>
-    <Disp name='all' nb={total} />
-    <Disp name='Positive' nb={positiv} />
-    <Disp name='Average' nb={average} />
-    </div>
+    <table>
+      <tbody>
+        <StatisticLine text="good" value={good} />
+        <StatisticLine text="neutral" value={neutral} />
+        <StatisticLine text="bad" value={bad} />
+        <StatisticLine text="all" value={total} />
+        <StatisticLine text="average" value={average} />
+        <StatisticLine text="positive" value={positiv} />
+      </tbody>
+    </table>
   )
 }
 
