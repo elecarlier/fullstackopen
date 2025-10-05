@@ -2,6 +2,8 @@
 
 This repository contains exercises and projects from the Full Stack Open course.
 
+https://fullstackopen.com/en/
+
 ## Course Progression
 
 | Part | Sub-part | Status |
