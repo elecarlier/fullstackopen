@@ -36,6 +36,7 @@ const App = () => {
 
   console.log('render', persons.length, 'person')
 
+
   const addPerson = (event) => {
     event.preventDefault()
 
@@ -48,10 +49,6 @@ const App = () => {
       name: newName,
       number: newNumber
     }
-
-    // setPersons(persons.concat(personObject))
-    // setNewName('')
-    // setNewNumber('')
 
     PersonService.create(personObject).then((returnedPerson) => {
       console.log('create promise fulfilled')
@@ -75,6 +72,20 @@ const App = () => {
       .some(word => word.startsWith(filter.toLowerCase()))
   )
   
+
+  const deletePerson = (id, name) => {
+    if (window.confirm(`Delete ${name}?`)) {
+      PersonService.remove(id)
+        .then(() => {
+          setPersons(persons.filter(person => person.id !== id))
+        })
+        .catch(error => {
+          alert(`The person '${name}' was already removed from server`)
+          setPersons(persons.filter(p => p.id !== id))
+        })
+    }
+  }
+  
   return (
     <div>
       <h2>Phonebook</h2>
@@ -95,7 +106,9 @@ const App = () => {
       <h2>Numbers</h2>
       <ul>
       {persons.map(person => 
-        <Person key={person.name} person={person} />
+        <Person key={person.name} 
+          person={person}
+          onDelete={() => deletePerson(person.id, person.name)}  />
       )}
       </ul>
     </div>
