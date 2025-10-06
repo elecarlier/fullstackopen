@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Person from './components/Person'
 import PersonService from './services/persons'
+import Notification from './components/Notification'
 
 const Filter = ({ value, onChange }) => (
   <div>
@@ -26,6 +27,8 @@ const App = () => {
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
   const [filter, setFilter] = useState('') 
+  const [errorMessage, setErrorMessage] = useState('some error happened...')
+
 
   useEffect(() => {
     PersonService.getAll().then((initialPerson) => {
@@ -52,6 +55,12 @@ const App = () => {
             setPersons(persons.map(p => p.id !== person.id ? p : returnedPerson))
             setNewName('')
             setNewNumber('')
+            setErrorMessage(
+              `Note '${person.name}' successfully added`
+            )
+            setTimeout(() => {
+              setErrorMessage(null)
+            }, 5000)    
           })
           .catch(error => {
             alert(`The person '${person.name}' was already deleted from the server`)
@@ -61,7 +70,6 @@ const App = () => {
 
       return
     }
-
 
     const personObject = {
       name: newName,
@@ -73,7 +81,13 @@ const App = () => {
       setPersons(persons.concat(returnedPerson))
       setNewName('')
       setNewNumber('')
-
+      setErrorMessage(
+        `'${returnedPerson.name}' successfully added`
+      )
+      setTimeout(() => {
+        setErrorMessage(null)
+      }, 5000)    
+      console.log('After the alert name + ${returnedPerson.name}')
     })
 
   }
@@ -107,6 +121,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message={errorMessage} />
       <Filter value={filter} onChange={handleFilterChange} />
       <ul>
       {personsToShow.map(person => 
