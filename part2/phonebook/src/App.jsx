@@ -39,11 +39,29 @@ const App = () => {
 
   const addPerson = (event) => {
     event.preventDefault()
+  
+    const person = persons.find(p => p.name === newName)
+  
+    if (person) {
+      if (window.confirm(`${newName} is already added to the phonebook, replace the old number with a new one?`)) {
+        const changedPerson = { ...person, number: newNumber }
+  
+        PersonService
+          .update(person.id, changedPerson)
+          .then(returnedPerson => {
+            setPersons(persons.map(p => p.id !== person.id ? p : returnedPerson))
+            setNewName('')
+            setNewNumber('')
+          })
+          .catch(error => {
+            alert(`The person '${person.name}' was already deleted from the server`)
+            setPersons(persons.filter(p => p.id !== person.id))
+          })
+      }
 
-    if (persons.some(person => person.name === newName)) {
-      alert(`${newName} is already added to the phonebook`)
       return
     }
+
 
     const personObject = {
       name: newName,
