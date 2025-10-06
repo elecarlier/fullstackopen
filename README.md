@@ -15,8 +15,8 @@ https://fullstackopen.com/en/
 |      | A more complex state, debugging React apps | ✅ Completed |
 | 2    | Rendering a collection, modules | ✅ Completed |
 |      | Forms | ✅ Completed |
-|      | Getting data from server | ⬜ in progress |
-|      | Altering data on server | ⬜ Not started |
+|      | Getting data from server | ✅ Completed |
+|      | Altering data on server | ✅ Completed |
 |      | Adding styles to React app | ⬜ Not started |
 | 3    | Programming a Server with NodeJS and Express | ⬜ Not started |
 | 4    | Testing Express Servers, User Administration | ⬜ Not started |

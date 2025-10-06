@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 import Person from './components/Person'
+import PersonService from './services/persons'
 
 const Filter = ({ value, onChange }) => (
   <div>
@@ -28,16 +28,13 @@ const App = () => {
   const [filter, setFilter] = useState('') 
 
   useEffect(() => {
-    console.log('effect')
-    axios.get('http://localhost:3001/persons').then((response) => {
-      console.log('promise fulfilled')
-      setPersons(response.data)
+    PersonService.getAll().then((initialPerson) => {
+      console.log('getAll promise fulfilled')
+      setPersons(initialPerson)
     })
   }, [])
 
   console.log('render', persons.length, 'person')
-
-
 
   const addPerson = (event) => {
     event.preventDefault()
@@ -52,9 +49,17 @@ const App = () => {
       number: newNumber
     }
 
-    setPersons(persons.concat(personObject))
-    setNewName('')
-    setNewNumber('')
+    // setPersons(persons.concat(personObject))
+    // setNewName('')
+    // setNewNumber('')
+
+    PersonService.create(personObject).then((returnedPerson) => {
+      console.log('create promise fulfilled')
+      setPersons(persons.concat(returnedPerson))
+      setNewName('')
+      setNewNumber('')
+
+    })
 
   }
   const handleNameChange = (event) => setNewName(event.target.value)
