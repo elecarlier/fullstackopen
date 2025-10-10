@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import CountryService from './service/country'
 import Country from './components/country'
+import CountryDetails from './components/CountryDetails'
 
 
 const Filter = ({ value, onChange }) => (
@@ -25,7 +26,7 @@ const App = () => {
 
   const handleFilterChange = (event) => setFilter(event.target.value)
 
-  const CountryToShow = countries.filter(country =>
+  const countriesToShow = countries.filter(country =>
     country.name.common.toLowerCase().includes(filter.toLowerCase())
   )
   
@@ -33,11 +34,23 @@ const App = () => {
     <div>
       <h2>Find countries</h2>
       <Filter value={filter} onChange={handleFilterChange} />
-      <ul>
-      {CountryToShow.map(country => 
-        <Country key={country.name.common} country={country}/>
+      {filter && (
+        <>
+          {countriesToShow.length > 10 ? (
+            <p>Too many matches, specify another filter</p>
+          ) : countriesToShow.length > 1 ? (
+            <ul>
+              {countriesToShow.map(c => (
+                <Country key={c.cca3} country={c} />
+              ))}
+            </ul>
+          ) : countriesToShow.length === 1 ? (
+            <CountryDetails country={countriesToShow[0]} />
+          ) : (
+            <p>No matches found</p>
+          )}
+        </>
       )}
-    </ul>
     </div>
   )
 }
