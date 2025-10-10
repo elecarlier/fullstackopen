@@ -13,7 +13,9 @@ const Filter = ({ value, onChange }) => (
 
 const App = () => {
   const [countries, setCountries] = useState([])
-  const [filter, setFilter] = useState('') 
+  const [filter, setFilter] = useState('')
+  const [selectedCountry, setSelectedCountry] = useState(null)
+
 
   useEffect(() => {
     CountryService.getAll().then((initialCountry) => {
@@ -24,7 +26,13 @@ const App = () => {
 
   console.log('render', countries.length, 'countries')
 
-  const handleFilterChange = (event) => setFilter(event.target.value)
+  const handleShowCountry = (country) => setSelectedCountry(country)
+
+  const handleFilterChange = (event) => 
+    {
+      setFilter(event.target.value)
+      setSelectedCountry(null)
+    }
 
   const countriesToShow = countries.filter(country =>
     country.name.common.toLowerCase().includes(filter.toLowerCase())
@@ -34,14 +42,17 @@ const App = () => {
     <div>
       <h2>Find countries</h2>
       <Filter value={filter} onChange={handleFilterChange} />
-      {filter && (
+      {selectedCountry ? (
+        <CountryDetails country={selectedCountry} />
+      ): filter ?
+      (
         <>
           {countriesToShow.length > 10 ? (
             <p>Too many matches, specify another filter</p>
           ) : countriesToShow.length > 1 ? (
             <ul>
               {countriesToShow.map(c => (
-                <Country key={c.cca3} country={c} />
+                <Country key={c.cca3} country={c} onShow={handleShowCountry} />
               ))}
             </ul>
           ) : countriesToShow.length === 1 ? (
@@ -50,7 +61,7 @@ const App = () => {
             <p>No matches found</p>
           )}
         </>
-      )}
+      ) : null}
     </div>
   )
 }
