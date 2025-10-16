@@ -35,10 +35,64 @@ app.get('/api/persons', (request, response) => {
     response.json(persons)
   })
 
-//must show the time that the request was received and how many entries are in the phonebook at the time of processing the request.
-app.get('/info', (request, response) => {
-//to do 
+app.get('/api/persons/:id', (request, response) => {
+    const id = request.params.id
+    const person = persons.find((person) => person.id === id)
+  
+    if (person) {
+      response.json(person)
+    } else {
+      response.status(404).end()
+    }
   })
+
+  const generateId = () => {
+    return String(Math.floor(Math.random() * 900))
+  }
+
+  app.post('/api/persons', (request, response) => {
+    const body = request.body
+  
+    if (!body.number || !body.name) {
+      return response.status(400).json({
+        error: 'Name or number missing',
+      })
+    }
+    const nameExists = persons.find(person => person.name === body.name)
+    if (nameExists) {
+      return response.status(400).json({
+        error: 'Name must be unique',
+      })
+    }
+  
+    const person = {
+        name: body.name,
+        number: body.number,
+        id: generateId(),
+    }
+  
+    persons = persons.concat(person)
+  
+    response.json(person)
+  })
+
+app.get('/info', (request, response) => {
+    const count = persons.length
+    const date = new Date()
+
+    response.send(`
+        <p>Phonebook has info for ${count} people</p>
+        <p>${date}</p>
+    `)
+  })
+
+  app.delete('/api/persons/:id', (request, response) => {
+    const id = request.params.id
+    persons = persons.filter((person) => person.id !== id)
+  
+    response.status(204).end()
+  })
+  
 
 const PORT = 3001
 app.listen(PORT, () => {
