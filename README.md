@@ -17,8 +17,11 @@ https://fullstackopen.com/en/
 |      | Forms | ✅ Completed |
 |      | Getting data from server | ✅ Completed |
 |      | Altering data on server | ✅ Completed |
-|      | Adding styles to React app | ⬜ Not started |
-| 3    | Programming a Server with NodeJS and Express | ⬜ Not started |
+|      | Adding styles to React app | ✅ Completed |
+| 3    | Node.js and Express | ⬜ in progress... |
+|      | Deploying app to internet | ⬜ Not started  |
+|      | Saving data to MongoDB |⬜ Not started  |
+|      | Validation and ESLint | ⬜ Not started |
 | 4    | Testing Express Servers, User Administration | ⬜ Not started |
 | 5    | Testing React Apps | ⬜ Not started |
 | 6    | Advanced State Management | ⬜ Not started |
