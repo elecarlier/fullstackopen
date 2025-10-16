@@ -18,8 +18,8 @@ https://fullstackopen.com/en/
 |      | Getting data from server | ✅ Completed |
 |      | Altering data on server | ✅ Completed |
 |      | Adding styles to React app | ✅ Completed |
-| 3    | Node.js and Express | ⬜ in progress... |
-|      | Deploying app to internet | ⬜ Not started  |
+| 3    | Node.js and Express | ✅ Completed  |
+|      | Deploying app to internet | ⬜ in progress  |
 |      | Saving data to MongoDB |⬜ Not started  |
 |      | Validation and ESLint | ⬜ Not started |
 | 4    | Testing Express Servers, User Administration | ⬜ Not started |
