@@ -3,6 +3,7 @@ import Person from './components/Person'
 import PersonService from './services/persons'
 import Notification from './components/Notification'
 
+
 const Filter = ({ value, onChange }) => (
   <div>
     Filter shown with <input value={value} onChange={onChange} />
