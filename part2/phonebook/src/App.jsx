@@ -97,13 +97,15 @@ const App = () => {
   
   const handleFilterChange = (event) => setFilter(event.target.value)
 
-  const personsToShow = persons.filter(person => 
-    person.name
-      .toLowerCase()
-      .split(' ')          
-      .some(word => word.startsWith(filter.toLowerCase()))
-  )
-  
+  const personsToShow = Array.isArray(persons)
+  ? persons.filter(person => 
+      person.name
+        .toLowerCase()
+        .split(' ')          
+        .some(word => word.startsWith(filter.toLowerCase()))
+    )
+  : [];
+
 
   const deletePerson = (id, name) => {
     if (window.confirm(`Delete ${name}?`)) {
