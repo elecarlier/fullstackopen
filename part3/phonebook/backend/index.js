@@ -9,7 +9,7 @@ app.use(cors())
 app.use(express.json())   
 app.use(morgan('tiny'))
 
-// app.use(express.static(path.join(__dirname, '../frontend/dist')));
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 
 let persons = [
@@ -36,10 +36,12 @@ let persons = [
 ]
 
 
-
-app.get('/', (request, response) => {
-  response.send('<h1>Hello World!</h1>')
+app.get('/api/persons', (req, res) => {
+  res.json(persons)
 })
+// app.get('/', (request, response) => {
+//   response.send('<h1>Hello World!</h1>')
+// })
 
 
 app.get('/api/persons', (request, response) => {
