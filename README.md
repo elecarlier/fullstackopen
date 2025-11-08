@@ -19,7 +19,7 @@ https://fullstackopen.com/en/
 |      | Altering data on server | ✅ Completed |
 |      | Adding styles to React app | ✅ Completed |
 | 3    | Node.js and Express | ✅ Completed  |
-|      | Deploying app to internet | ⬜ in progress  |
+|      | Deploying app to internet | ✅ Completed   |
 |      | Saving data to MongoDB |⬜ Not started  |
 |      | Validation and ESLint | ⬜ Not started |
 | 4    | Testing Express Servers, User Administration | ⬜ Not started |
@@ -32,3 +32,30 @@ https://fullstackopen.com/en/
 | 11   | CI/CD | ⬜ Not started |
 | 12   | Containers | ⬜ Not started |
 | 13   | Using Relational Databases | ⬜ Not started |
+
+
+
+## Live Demo
+
+[Phonebook App](https://fullstackopen-dfpq.onrender.com)
+
+## Features
+
+- View all contacts
+- Add a new contact
+- Delete a contact
+- Filter contacts by name
+
+## Running Locally
+
+1. Clone the repository
+2. Navigate to the backend folder:
+   ```bash
+   cd part3/phonebook/backend
+   npm install
+   npm start
+3. Navigate to the frontend folder:
+  ```bash
+    cd ../frontend
+    npm install
+    npm run dev
