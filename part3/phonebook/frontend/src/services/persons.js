@@ -2,8 +2,8 @@ import axios from 'axios'
 // const baseUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001/api/persons'
 // const baseUrl = import.meta.env.VITE_BACKEND_URL;
 
-const baseUrl = 'https://fullstackopen-dfpq.onrender.com/api/persons';
-
+// const baseUrl = 'https://fullstackopen-dfpq.onrender.com/api/persons';
+const baseUrl = '/api/persons' //
 // const getAll = () => {
 //   const request = axios.get(baseUrl)
 //   return request.then(response => response.data)

@@ -11,6 +11,10 @@ app.use(morgan('tiny'))
 
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
+// app.get('/*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'frontend/dist/index.html'))
+// })
+
 
 let persons = [
     { 
@@ -36,6 +40,7 @@ let persons = [
 ]
 
 
+
 app.get('/api/persons', (req, res) => {
   res.json(persons)
 })
@@ -44,9 +49,9 @@ app.get('/api/persons', (req, res) => {
 // })
 
 
-app.get('/api/persons', (request, response) => {
-    response.json(persons)
-  })
+// app.get('/api/persons', (request, response) => {
+//     response.json(persons)
+//   })
 
 app.get('/api/persons/:id', (request, response) => {
     const id = request.params.id
